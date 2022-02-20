@@ -70,7 +70,7 @@ public class CrawlingTest {
 		Elements list = null;
 		
 		//System.out.println(document);
-		System.out.println("#############################################");
+		System.out.println("#############################################추가 합니다.");
 		int beginNum = Integer.parseInt(offset);
 		
 		for (Element e: es) {
