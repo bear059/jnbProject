@@ -13,17 +13,25 @@ import org.jsoup.select.Elements;
 public class CrawlingTest {
 	private final String centralUrl = "http://central.childcare.go.kr/ccef/sitelink/SiteLinkCenterSlPL.jsp";
 	public CrawlingTest() {
-		System.out.println("Hello World!!");
+		try {
+//			Response response = connectDocument(centralUrl, "0");
+//			int totalNum = findTotalPageNum (response);
+//			System.out.println(totalNum);
+//			crawlingTargetUrl(totalNum);
+			ReadCheckList rck = new ReadCheckList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	private void crawlingTargetUrl(int totalNum) {
 		try {
 			//crawling();
-			Response response = connectDocument(centralUrl, "0");
-			int totalNum = findTotalPageNum (response);
-			System.out.println(totalNum);
-			
 			for (int i = 0; i< totalNum; i=i+10) {
 				crawlingCenterList(centralUrl, Integer.toString(i));
 			}
-			//crawlingPost("0");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
